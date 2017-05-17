@@ -1,6 +1,6 @@
 rcxMain.inlineDisable();
 chrome.browserAction.onClicked.addListener(rcxMain.inlineToggle);
-chrome.tabs.onSelectionChanged.addListener(rcxMain.onTabSelect);
+chrome.tabs.onActivated.addListener(rcxMain.onTabSelect);
 chrome.runtime.onMessage.addListener(
   function(request, sender, response) {
     switch (request.type) {

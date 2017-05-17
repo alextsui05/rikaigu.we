@@ -98,6 +98,17 @@ var rcxContent = {
     return null;
   },
 
+  getRange: function(ev) {
+    if (document.caretRangeFromPoint)
+      return document.caretRangeFromPoint(ev.clientX, ev.clientY);
+    else if (ev.rangeParent) {
+      var r = document.createRange();
+      r.setStart(ev.rangeParent, ev.rangeOffset);
+      return r;
+    }
+    return null;
+  },
+
   showPopup: function(text, elem, x, y, looseWidth) {
     topdoc = window.document;
 
@@ -341,7 +352,7 @@ var rcxContent = {
         this.show(ev.currentTarget.rikaigu, this.sameDict);
         break;
       case 67: // c
-        chrome.extension.sendMessage({
+        chrome.runtime.sendMessage({
           "type": "copyToClip",
           "entry": rcxContent.lastFound
         });
@@ -356,7 +367,7 @@ var rcxContent = {
         }
         break;
       case 68: // d
-        chrome.extension.sendMessage({
+        chrome.runtime.sendMessage({
           "type": "switchOnlyReading"
         });
         this.show(ev.currentTarget.rikaigu, this.sameDict);
@@ -625,7 +636,7 @@ var rcxContent = {
 
     lastSelEnd = selEndList;
     lastRo = ro;
-    chrome.extension.sendMessage({
+    chrome.runtime.sendMessage({
         "type": "xsearch",
         "text": text,
         "dictOption": String(dictOption)
@@ -666,7 +677,7 @@ var rcxContent = {
       tdata.prevSelView = doc.defaultView;
     }
 
-    chrome.extension.sendMessage({
+    chrome.runtime.sendMessage({
       "type": "makehtml",
       "entry": e
     }, rcxContent.processHtml);
@@ -750,7 +761,7 @@ var rcxContent = {
   },
 
   showTitle: function(tdata) {
-    chrome.extension.sendMessage({
+    chrome.runtime.sendMessage({
         "type": "translate",
         "title": tdata.title
       },
@@ -772,7 +783,7 @@ var rcxContent = {
 
     this.lastFound = [e];
 
-    chrome.extension.sendMessage({
+    chrome.runtime.sendMessage({
       "type": "makehtml",
       "entry": e
     }, rcxContent.processHtml);
@@ -839,7 +850,7 @@ var rcxContent = {
 
     var fake;
     var tdata = window.rikaigu; // per-tab data
-    var range = document.caretRangeFromPoint(ev.clientX, ev.clientY);
+    var range = this.getRange(ev);
     if (range === null) return;
     var rp = range.startContainer;
     var ro = range.startOffset;
@@ -1005,6 +1016,6 @@ chrome.runtime.onMessage.addListener(
 );
 
 // When a page first loads, checks to see if it should enable script
-chrome.extension.sendMessage({
+chrome.runtime.sendMessage({
   "type": "enable?"
 });

@@ -1,7 +1,6 @@
 {
    "background": {
-      "page": "html/background.html",
-      "persistent": true
+     "scripts": ["js/data.js", "js/rikaigu.js", "js/background.js"]
    },
    "browser_action": {
       "default_icon": "images/ba.png"
