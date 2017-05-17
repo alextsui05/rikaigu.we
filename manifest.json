@@ -1,0 +1,27 @@
+{
+   "background": {
+      "page": "html/background.html",
+      "persistent": true
+   },
+   "browser_action": {
+      "default_icon": "images/ba.png"
+   },
+   "content_scripts": [ {
+      "all_frames": true,
+      "js": [ "js/rikaicontent.js" ],
+      "matches": [ "http://*/*", "https://*/*", "ftp://*/*", "file:///*" ]
+   } ],
+   "description": "Rikaikun enhanced. Translate Japanese by hovering over words.",
+   "icons": {
+      "128": "images/icon128.png",
+      "48": "images/icon48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnulm6m1itUKN97+3P768LCF1VEaO7eh45Ye1HJoqgfyToFmL67x311Nd8ZEfw5SzieuiHwcrxwWssCGoQtSMSt1mqz5b4OvrF88zPDnUJCTOHtLOvIY1HK4uM8UV6nL3+E3iNS+J0AsFCKKiTGkgzeobYAQaetYGXbzTTCyTHFjW5XQP/URGGaJ3Ble3q7LlXbN6zmfwZy9AxKWbEbD+pxxG7kgZsHgIKXuq1GzhZ8DepSNKhT/gAe5eZZhPR3tKZQ+f2zvMnzIZ8A4mWqaiK+VrjQelO+Yda3Z0srNNQd3rlIiaZ3Y2bV7UjossaDJEBJ/RNsJnXXpNJeuxJh/ugQIDAQAB",
+   "manifest_version": 2,
+   "name": "rikaigu",
+   "options_page": "html/options.html",
+   "permissions": [ "tabs", "clipboardWrite" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "0.9.4.2",
+   "web_accessible_resources": [ "css/popup-black.css", "css/popup-blue.css", "css/popup-lightblue.css", "css/popup-yellow.css", "css/popup-common.css", "html/scratchpad.html", "js/scratchpad.js" ]
+}

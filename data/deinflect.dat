@@ -1,0 +1,324 @@
+# Deinflect Rules 20081220-0509 | by Jonathan Zarate | http://www.polarcloud.com
+# word types (taken from jmdict):
+#	   v1 - ichidan verb
+#	adj-i - adjective (keyiyoushi)
+#	   v5 - godan verb
+#          vs - suru verb
+#          vk - kuru verb
+# special types:
+#	raw - piece of original text
+#	-te - te-form of word (used in intermidiate deinflections)
+# reason: particular deinflection marker
+# suffix | new suffix | source word type | new word type | reason
+くありませんでした	い	raw	adj-i	polite past negative
+いませんでした	う	raw	v5	polite past negative
+きませんでした	く	raw	v5	polite past negative
+きませんでした	くる	raw	vk	polite past negative
+ぎませんでした	ぐ	raw	v5	polite past negative
+しませんでした	す	raw	v5	polite past negative
+しませんでした	する	raw	vs	polite past negative
+ちませんでした	つ	raw	v5	polite past negative
+にませんでした	ぬ	raw	v5	polite past negative
+びませんでした	ぶ	raw	v5	polite past negative
+みませんでした	む	raw	v5	polite past negative
+りませんでした	る	raw	v5	polite past negative
+くありません	い	raw	adj-i	polite negative
+ませんでした	る	raw	v1|vk	polite past negative
+いましょう	う	raw	v5	polite volitional
+きましょう	く	raw	v5	polite volitional
+きましょう	くる	raw	vk	polite volitional
+ぎましょう	ぐ	raw	v5	polite volitional
+しましょう	す	raw	v5	polite volitional
+しましょう	する	raw	vs	polite volitional
+ちましょう	つ	raw	v5	polite volitional
+にましょう	ぬ	raw	v5	polite volitional
+びましょう	ぶ	raw	v5	polite volitional
+みましょう	む	raw	v5	polite volitional
+りましょう	る	raw	v5	polite volitional
+いじゃう	ぐ	v5	v5	-shimau
+いじまう	ぐ	v5	v5	-shimau
+いすぎる	う	v1	v5	-sugiru
+いちゃう	く	v5	v5	-shimau
+いちまう	く	v5	v5	-shimau
+いなさい	う	raw	v5	-nasai
+いました	う	raw	v5	polite past
+いません	う	raw	v5	polite negative
+かったら	い	raw	adj-i	-tara
+かったり	い	raw	adj-i	-tari
+きすぎる	く	v1	v5	-sugiru
+きすぎる	くる	v1	vk	-sugiru
+ぎすぎる	ぐ	v1	v5	-sugiru
+きちゃう	くる	v5	vk	-shimau
+きちまう	くる	v5	vk	-shimau
+きなさい	く	raw	v5	-nasai
+きなさい	くる	raw	vk	-nasai
+ぎなさい	ぐ	raw	v5	-nasai
+きました	く	raw	v5	polite past
+きました	くる	raw	vk	polite past
+ぎました	ぐ	raw	v5	polite past
+きません	く	raw	v5	polite negative
+きません	くる	raw	vk	polite negative
+ぎません	ぐ	raw	v5	polite negative
+こさせる	くる	v1	vk	causative
+こられる	くる	v1	vk	potential or passive
+しすぎる	す	v1	v5	-sugiru
+しすぎる	する	v1	vs	-sugiru
+しちゃう	す	v5	v5	-shimau
+しちまう	す	v5	v5	-shimau
+しちゃう	する	v5	vs	-shimau
+しちまう	する	v5	vs	-shimau
+しなさい	す	raw	v5	-nasai
+しなさい	する	raw	vs	-nasai
+しました	す	raw	v5	polite past
+しました	する	raw	vs	polite past
+しません	す	raw	v5	polite negative
+しません	する	raw	vs	polite negative
+ちすぎる	つ	v1	v5	-sugiru
+ちなさい	つ	raw	v5	-nasai
+ちました	つ	raw	v5	polite past
+ちません	つ	raw	v5	polite negative
+っちゃう	う	v5	v5	-shimau
+っちまう	う	v5	v5	-shimau
+っちゃう	く	v5	v5	-shimau
+っちまう	く	v5	v5	-shimau
+っちゃう	つ	v5	v5	-shimau
+っちまう	つ	v5	v5	-shimau
+っちゃう	る	v5	v5	-shimau
+っちまう	る	v5	v5	-shimau
+てしまう	て	v5|raw	-te	-shimau
+でしまう	で	v5|raw	-te	-shimau
+にすぎる	ぬ	v1	v5	-sugiru
+になさい	ぬ	raw	v5	-nasai
+にました	ぬ	raw	v5	polite past
+にません	ぬ	raw	v5	polite negative
+びすぎる	ぶ	v1	v5	-sugiru
+びなさい	ぶ	raw	v5	-nasai
+びました	ぶ	raw	v5	polite past
+びません	ぶ	raw	v5	polite negative
+ましょう	る	raw	v1|vk	polite volitional
+みすぎる	む	v1	v5	-sugiru
+みなさい	む	raw	v5	-nasai
+みました	む	raw	v5	polite past
+みません	む	raw	v5	polite negative
+りすぎる	る	v1	v5	-sugiru
+りなさい	る	raw	v5	-nasai
+りました	る	raw	v5	polite past
+りません	る	raw	v5	polite negative
+んじゃう	ぬ	v5	v5	-shimau
+んじまう	ぬ	v5	v5	-shimau
+んじゃう	ぶ	v5	v5	-shimau
+んじまう	ぶ	v5	v5	-shimau
+んじゃう	む	v5	v5	-shimau
+んじまう	む	v5	v5	-shimau
+いそう	う	raw	v5	-sou
+いたい	う	adj-i	v5	-tai
+いたら	く	raw	v5	-tara
+いだら	ぐ	raw	v5	-tara
+いたり	く	raw	v5	-tari
+いだり	ぐ	raw	v5	-tari
+います	う	raw	v5	polite
+かせる	く	v1	v5	causative
+がせる	ぐ	v1	v5	causative
+かった	い	raw	adj-i	past
+かない	く	adj-i	v5	negative
+がない	ぐ	adj-i	v5	negative
+かれる	く	v1	v5	passive
+がれる	ぐ	v1	v5	passive
+きそう	く	raw	v5	-sou
+きそう	くる	raw	vk	-sou
+ぎそう	ぐ	raw	v5	-sou
+きたい	く	adj-i	v5	-tai
+きたい	くる	adj-i	vk	-tai
+ぎたい	ぐ	adj-i	v5	-tai
+きたら	くる	raw	vk	-tara
+きたり	くる	raw	vk	-tari
+きます	く	raw	v5	polite
+きます	くる	raw	vk	polite
+ぎます	ぐ	raw	v5	polite
+くない	い	adj-i	adj-i	negative
+ければ	い	raw	adj-i	-ba
+こない	くる	adj-i	vk	negative
+こよう	くる	raw	vk	volitional
+これる	くる	v1	vk	potential
+させる	する	v1	vs	causative
+させる	る	v1	v1|vk	causative
+させる	す	v1	v5	causative
+さない	す	adj-i	v5	negative
+される	す	v1	v5	passive or causative
+される	する	v1	vs	passive
+しそう	す	raw	v5	-sou
+しそう	する	raw	vs	-sou
+したい	す	adj-i	v5	-tai
+したい	する	adj-i	vs	-tai
+したら	す	raw	v5	-tara
+したら	する	raw	vs	-tara
+したり	す	raw	v5	-tari
+したり	する	raw	vs	-tari
+しない	する	adj-i	vs	negative
+します	す	raw	v5	polite
+します	する	raw	vs	polite
+しよう	する	raw	vs	volitional
+すぎる	い	v1	adj-i	-sugiru
+すぎる	る	v1	v1|vk	-sugiru
+たせる	つ	v1	v5	causative
+たない	つ	adj-i	v5	negative
+たれる	つ	v1	v5	passive
+てある	て	v5|raw	-te	-aru
+である	で	v5|raw	-te	-aru
+ておる	て	v5|raw	-te	polite -iru
+でおる	で	v5|raw	-te	polite -iru
+ている	て	v1|raw	-te	-iru
+でいる	で	v1|raw	-te	-iru
+てみる	て	v1|raw	-te	-miru
+でみる	で	v1|raw	-te	-miru
+ていく	て	v5|raw	-te	-iku
+でいく	で	v5|raw	-te	-iku
+てくる	て	vk|raw	-te	-kuru
+でくる	で	vk|raw	-te	-kuru
+ておく	て	v5|raw	-te	-oku
+でおく	で	v5|raw	-te	-oku
+ちそう	つ	raw	v5	-sou
+ちたい	つ	adj-i	v5	-tai
+ちます	つ	raw	v5	polite
+ちゃう	る	v5	v1|vk	-shimau
+ちまう	る	v5	v1|vk	-shimau
+ったら	う	raw	v5	-tara
+ったら	つ	raw	v5	-tara
+ったら	る	raw	v5	-tara
+ったり	う	raw	v5	-tari
+ったり	つ	raw	v5	-tari
+ったり	る	raw	v5	-tari
+なさい	る	raw	v1|vk	-nasai
+なせる	ぬ	v1	v5	causative
+なない	ぬ	adj-i	v5	negative
+なれる	ぬ	v1	v5	passive
+にそう	ぬ	raw	v5	-sou
+にたい	ぬ	adj-i	v5	-tai
+にます	ぬ	raw	v5	polite
+ばせる	ぶ	v1	v5	causative
+ばない	ぶ	adj-i	v5	negative
+ばれる	ぶ	v1	v5	passive
+びそう	ぶ	raw	v5	-sou
+びたい	ぶ	adj-i	v5	-tai
+びます	ぶ	raw	v5	polite
+ました	る	raw	v1|vk	polite past
+ませる	む	v1	v5	causative
+ません	る	raw	v1|vk	polite negative
+まない	む	adj-i	v5	negative
+まれる	む	v1	v5	passive
+みそう	む	raw	v5	-sou
+みたい	む	adj-i	v5	-tai
+みます	む	raw	v5	polite
+らせる	る	v1	v5	causative
+らない	る	adj-i	v5	negative
+られる	る	v1	v1|v5|vk	potential or passive
+りそう	る	raw	v5	-sou
+りたい	る	adj-i	v5	-tai
+ります	る	raw	v5	polite
+わせる	う	v1	v5	causative
+わない	う	adj-i	v5	negative
+われる	う	v1	v5	passive
+んだら	ぬ	raw	v5	-tara
+んだら	ぶ	raw	v5	-tara
+んだら	む	raw	v5	-tara
+んだり	ぬ	raw	v5	-tari
+んだり	ぶ	raw	v5	-tari
+んだり	む	raw	v5	-tari
+来れる	来る	v1	vk	potential
+これる	くる	v1	vk	potential
+いた	く	raw	v5	past
+いだ	ぐ	raw	v5	past
+いて	く	-te	v5	-te
+いで	ぐ	-te	v5	-te
+えば	う	raw	v5	-ba
+える	う	v1	v5	potential
+おう	う	raw	v5	volitional
+かず	く	raw	v5	-zu
+がず	ぐ	raw	v5	-zu
+きた	くる	raw	vk	past
+きて	くる	-te	vk	-te
+くて	い	-te	adj-i	-te
+けば	く	raw	v5	-ba
+げば	ぐ	raw	v5	-ba
+ける	く	v1	v5	potential
+げる	ぐ	v1	v5	potential
+こい	くる	raw	vk	imperative
+こう	く	raw	v5	volitional
+ごう	ぐ	raw	v5	volitional
+こず	くる	raw	vk	-zu
+さず	す	raw	v5	-zu
+した	す	raw	v5	past
+した	する	raw	vs	past
+して	す	-te	v5	-te
+して	する	-te	vs	-te
+しろ	する	raw	vs	imperative
+せず	する	raw	vs	-zu
+せば	す	raw	v5	-ba
+せよ	する	raw	vs	imperative
+せる	す	v1	v5	potential
+そう	い	raw	adj-i	-sou
+そう	す	raw	v5	volitional
+そう	る	raw	v1|vk	-sou
+たい	る	adj-i	v1|vk	-tai
+たず	つ	raw	v5	-zu
+たら	る	raw	v1|vk	-tara
+たり	る	raw	v1|vk	-tari
+った	う	raw	v5	past
+った	く	raw	v5	past
+った	つ	raw	v5	past
+った	る	raw	v5	past
+って	う	-te	v5	-te
+って	く	-te	v5	-te
+って	つ	-te	v5	-te
+って	る	-te	v5	-te
+てば	つ	raw	v5	-ba
+てる	つ	v1	v5	potential
+てる	て	v1|raw	-te	-iru
+でる	で	v1|raw	-te	-iru
+とう	つ	raw	v5	volitional
+とく	て	v5|raw	-te	-oku
+どく	で	v5|raw	-te	-oku
+ない	る	adj-i	v1|vk	negative
+なず	ぬ	raw	v5	-zu
+ねば	ぬ	raw	v5	-ba
+ねる	ぬ	v1	v5	potential
+のう	ぬ	raw	v5	volitional
+ばず	ぶ	raw	v5	-zu
+べば	ぶ	raw	v5	-ba
+べる	ぶ	v1	v5	potential
+ぼう	ぶ	raw	v5	volitional
+ます	る	raw	v1|vk	polite
+まず	む	raw	v5	-zu
+めば	む	raw	v5	-ba
+める	む	v1	v5	potential
+もう	む	raw	v5	volitional
+よう	る	raw	v1|vk	volitional
+らず	る	raw	v5	-zu
+れば	る	raw	v1|v5|vk|vs	-ba
+れる	る	v1	v1|v5	potential
+ろう	る	raw	v5	volitional
+わず	う	raw	v5	-zu
+んだ	ぬ	raw	v5	past
+んだ	ぶ	raw	v5	past
+んだ	む	raw	v5	past
+んで	ぬ	-te	v5	-te
+んで	ぶ	-te	v5	-te
+んで	む	-te	v5	-te
+い	る	raw	vk	imperative
+え	う	raw	v5	imperative
+く	い	raw	adj-i	adv
+け	く	raw	v5	imperative
+げ	ぐ	raw	v5	imperative
+さ	い	raw	adj-i	noun
+ず	る	raw	v1|vk	-zu
+せ	す	raw	v5	imperative
+た	る	raw	v1|vk	past
+て	つ	raw	v5	imperative
+て	る	-te	v1|vk	-te
+な		raw	v1|v5|vk|vs	imperative negative
+ね	ぬ	raw	v5	imperative
+べ	ぶ	raw	v5	imperative
+め	む	raw	v5	imperative
+よ	る	raw	v1	imperative
+れ	る	raw	v5	imperative
+ろ	る	raw	v1	imperative
