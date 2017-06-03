@@ -7,7 +7,7 @@
    },
    "content_scripts": [ {
       "all_frames": true,
-      "js": [ "js/rikaicontent.js" ],
+      "js": [ "js/text_helper.js", "js/rikaicontent.js" ],
       "matches": [ "http://*/*", "https://*/*", "ftp://*/*", "file:///*" ]
    } ],
    "description": "Rikaigu's little brother. Translate Japanese by hovering over words.",

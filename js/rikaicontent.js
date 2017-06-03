@@ -50,6 +50,7 @@ var rcxContent = {
   forceKanji: 0,
   defaultDict: 2,
   nextDict: 3,
+  textHelper: new TextHelper(),
 
   // Adds the listeners and stuff
   enableTab: function() {
@@ -309,6 +310,8 @@ var rcxContent = {
     x: null,
     y: null
   },
+  rangeParent: null,
+  rangeOffset: null,
   lastTarget: null,
 
   onKeyDown: function(ev) {
@@ -379,6 +382,9 @@ var rcxContent = {
           ev.currentTarget.rikaigu.uofs += ev.currentTarget.rikaigu.uofsNext;
           if (this.show(ev.currentTarget.rikaigu, this.defaultDict) >= 0) break;
         }
+        break;
+      case 83: // s
+        this.saveContext(ev);
         break;
       case 89: // y
         this.altView = 0;
@@ -583,6 +589,18 @@ var rcxContent = {
       text += this.getInlineText(nextNode, selEndList, maxLength - text.length, xpathExpr);
 
     return text;
+  },
+
+  saveContext: function(ev) {
+    var ev_ = {
+      pageX: this.lastPos.x,
+      pageY: this.lastPos.y,
+      rangeParent: this.rangeParent,
+      rangeOffset: this.rangeOffset
+    };
+    var data = this.textHelper.extractTextNode(ev_);
+    this.sentence = this.textHelper.extractSentence(data.str, data.off);
+    console.log(this.sentence);
   },
 
   // Hack because SelEnd can't be sent in messages
@@ -835,6 +853,8 @@ var rcxContent = {
   onMouseMove: function(ev) {
     rcxContent.lastPos.x = ev.clientX;
     rcxContent.lastPos.y = ev.clientY;
+    rcxContent.rangeParent = ev.rangeParent;
+    rcxContent.rangeOffset = ev.rangeOffset;
     rcxContent.lastTarget = ev.target;
     rcxContent.tryUpdatePopup(ev);
   },
