@@ -122,6 +122,8 @@ rcxMain.config.disablekeys = localStorage["disablekeys"];
 rcxMain.config.showOnKey = localStorage["showOnKey"];
 rcxMain.config.kanjicomponents = localStorage["kanjicomponents"];
 rcxMain.config.kanjiinfo = new Array(rcxDict.prototype.numList.length / 2);
+rcxMain.config.serverUrl = localStorage['serverUrl'];
+rcxMain.config.authToken = localStorage['authToken'];
 for (i = 0; i * 2 < rcxDict.prototype.numList.length; i++) {
   rcxMain.config.kanjiinfo[i] = localStorage[rcxDict.prototype.numList[i * 2]];
 }

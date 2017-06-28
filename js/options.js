@@ -70,6 +70,8 @@ function fillVals() {
     }
   }
 
+  document.optform.serverUrl.value = localStorage['serverUrl'];
+  document.optform.authToken.value = localStorage['authToken'];
 }
 
 function getVals() {
@@ -91,6 +93,9 @@ function getVals() {
   localStorage['lineEnding'] = document.optform.lineEnding.value;
   localStorage['copySeparator'] = document.optform.copySeparator.value;
   localStorage['maxClipCopyEntries'] = document.optform.maxClipCopyEntries.value;
+
+  localStorage['serverUrl'] = document.optform.serverUrl.value;
+  localStorage['authToken'] = document.optform.authToken.value;
 
   var popupDelay;
   try {
@@ -121,6 +126,8 @@ function getVals() {
   chrome.extension.getBackgroundPage().rcxMain.config.lineEnding = localStorage["lineEnding"];
   chrome.extension.getBackgroundPage().rcxMain.config.copySeparator = localStorage["copySeparator"];
   chrome.extension.getBackgroundPage().rcxMain.config.maxClipCopyEntries = localStorage["maxClipCopyEntries"];
+  chrome.extension.getBackgroundPage().rcxMain.config.serverUrl = localStorage["serverUrl"];
+  chrome.extension.getBackgroundPage().rcxMain.config.authToken = localStorage["authToken"];
 
 }
 window.onload = fillVals;
