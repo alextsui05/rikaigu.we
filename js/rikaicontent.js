@@ -384,7 +384,7 @@ var rcxContent = {
         }
         break;
       case 83: // s
-        this.saveContext(ev);
+        this.saveContext(ev, rcxContent.lastFound);
         break;
       case 89: // y
         this.altView = 0;
@@ -601,6 +601,29 @@ var rcxContent = {
     var data = this.textHelper.extractTextNode(ev_);
     this.sentence = this.textHelper.extractSentence(data.str, data.off);
     console.log(this.sentence);
+    console.log("lastFound = " + JSON.stringify(this.lastFound));
+    if (this.lastFound) {
+      var e = this.lastFound[0].data[0][0].match(/^(.+?)\s+(?:\[(.*?)\])?\s*\/(.+)/);
+      var lookup = e[2] ? e[2] : e[1];
+      var payload = {
+        lookup: lookup,
+        context: {
+          content: this.sentence,
+          url: window.location.href
+        }
+      };
+      var url = window.rikaigu.config.serverUrl + "/api/v1/contexts";
+      var authToken = window.rikaigu.config.authToken;
+      console.log(url);
+      var req = new XMLHttpRequest();
+      req.open('POST', url, false);
+      req.setRequestHeader('Content-Type', 'application/json');
+      req.setRequestHeader('AUTHORIZATION', 'Token token=' + authToken);
+      req.send(JSON.stringify(payload));
+      console.log("response = " + req.responseText);
+    } else {
+      console.log("no match found");
+    }
   },
 
   // Hack because SelEnd can't be sent in messages
@@ -675,7 +698,8 @@ var rcxContent = {
       rcxContent.clearHi();
       return -1;
     }
-    rcxContent.lastFound = [e];
+    this.lastFound = rcxContent.lastFound = [e];
+    console.log("Found shit: " + e.data[0]);
 
     if (!e.matchLen) e.matchLen = 1;
     tdata.uofsNext = e.matchLen;
@@ -695,6 +719,7 @@ var rcxContent = {
       tdata.prevSelView = doc.defaultView;
     }
 
+    this.entry = e;
     chrome.runtime.sendMessage({
       "type": "makehtml",
       "entry": e
