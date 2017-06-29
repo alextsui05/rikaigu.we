@@ -81,6 +81,8 @@ var rcxContent = {
       if (e) e.parentNode.removeChild(e);
       e = document.getElementById('rikaigu-window');
       if (e) e.parentNode.removeChild(e);
+      e = document.getElementById('rikaigu-flash');
+      if (e) e.parentNode.removeChild(e);
 
       this.clearHi();
       delete window.rikaigu;
@@ -110,6 +112,14 @@ var rcxContent = {
     return null;
   },
 
+  showFlash: function(text) {
+    var flashPopup = topdoc.getElementById('rikaigu-flash');
+    if (!flashPopup)
+      return;
+    flashPopup.style.setProperty('display', '', 'important');
+    flashPopup.innerHTML = text;
+  },
+
   showPopup: function(text, elem, x, y, looseWidth) {
     topdoc = window.document;
 
@@ -117,6 +127,7 @@ var rcxContent = {
 
 
     var popup = topdoc.getElementById('rikaigu-window');
+    var flashPopup = topdoc.getElementById('rikaigu-flash');
     if (!popup) {
       var css = topdoc.createElementNS('http://www.w3.org/1999/xhtml', 'link');
       css.setAttribute('rel', 'stylesheet');
@@ -134,6 +145,16 @@ var rcxContent = {
         function(ev) {
           rcxContent.hidePopup();
           ev.stopPropagation();
+        }, true);
+
+      flashPopup = topdoc.createElementNS('http://www.w3.org/1999/xhtml', 'div');
+      flashPopup.setAttribute('id', 'rikaigu-flash');
+      flashPopup.style.setProperty('display', 'none', 'important');
+      topdoc.documentElement.appendChild(flashPopup);
+
+      flashPopup.addEventListener('click',
+        function(ev) {
+          flashPopup.style.setProperty('display', 'none', 'important');
         }, true);
     } else {
       var cssdoc = window.rikaigu.config.css;
@@ -619,8 +640,18 @@ var rcxContent = {
       req.open('POST', url, false);
       req.setRequestHeader('Content-Type', 'application/json');
       req.setRequestHeader('AUTHORIZATION', 'Token token=' + authToken);
-      req.send(JSON.stringify(payload));
-      console.log("response = " + req.responseText);
+      try {
+        req.send(JSON.stringify(payload));
+        if (req.status == 200) {
+          rcxContent.showFlash("Context added");
+        } else {
+          rcxContent.showFlash("Error adding context");
+        }
+        console.log("response = " + req.responseText);
+      } catch(err) {
+        rcxContent.showFlash("Error posting to server");
+        console.log(err.message);
+      }
     } else {
       console.log("no match found");
     }

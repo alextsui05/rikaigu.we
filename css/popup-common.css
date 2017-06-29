@@ -223,3 +223,12 @@
   padding: 0px 2px !important;
   vertical-align: top !important;
 }
+
+#rikaigu-flash {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1000000;
+  width: 100px;
+  border: 1px solid black;
+}
