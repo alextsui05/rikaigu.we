@@ -47,6 +47,12 @@ git config --global core.autocrlf=false
 
 # Changelog
 
+## Pending
+
+* Enable saving lookups to a Rails server (codename Kiroku)
+* Pressing 's' will save the current lookup to server for future reference
+* Add server settings to options page
+
 ## Version 0.2.0 - 2017-06-27
 
 * Fix deprecation in manifest to make preferences pane accessible in Firefox.
