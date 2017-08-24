@@ -53,6 +53,11 @@ git config --global core.autocrlf=false
 * Pressing 's' will save the current lookup to server for future reference
 * Add server settings to options page
 
+## Version 0.2.1 - 2017-08-24
+
+* Fix bug where context creation fails with multiple readings
+* Additionally, pass a hint parameter to help with ambiguous lookups
+
 ## Version 0.2.0 - 2017-06-27
 
 * Fix deprecation in manifest to make preferences pane accessible in Firefox.

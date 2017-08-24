@@ -626,8 +626,10 @@ var rcxContent = {
     if (this.lastFound) {
       var e = this.lastFound[0].data[0][0].match(/^(.+?)\s+(?:\[(.*?)\])?\s*\/(.+)/);
       var lookup = e[2] ? e[2] : e[1];
+      lookup = lookup.split(";")[0];
       var payload = {
         lookup: lookup,
+        hint: e[1],
         context: {
           content: this.sentence,
           url: window.location.href

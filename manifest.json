@@ -26,6 +26,6 @@
      "tabs",
      "<all_urls>"
    ],
-   "version": "0.2.0",
+   "version": "0.2.1",
    "web_accessible_resources": [ "css/popup-black.css", "css/popup-blue.css", "css/popup-lightblue.css", "css/popup-yellow.css", "css/popup-common.css", "html/scratchpad.html", "js/scratchpad.js" ]
 }
